@@ -1,0 +1,48 @@
+.addToCartBtn {
+  width: 100%;
+  border-color: #7f8cd9;
+  background-color: #7f8cd9;
+}
+
+.addToCartBtn:hover {
+  border-color: #5563b1;
+  background-color: #5563b1;
+}
+
+.card {
+  width: 18rem;
+  height: 23rem;
+  margin-bottom: 0.5rem;
+}
+
+.cardImg {
+  width: 15rem;
+  height: 15rem;
+  margin: auto;
+  object-fit: contain;
+}
+
+.priceAndRatingWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: nowrap;
+}
+
+.price {
+  font-family: system-ui;
+}
+
+.rating {
+  width: 40px;
+  height: 17px;
+  font-size: small;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: nowrap;
+  color: #fff;
+  border-radius: 3px;
+  padding: 1px 4px;
+  background-color: var(--secondary-color);
+}

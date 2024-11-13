@@ -1,0 +1,19 @@
+.logo {
+  width: 4rem;
+  aspect-ratio: 1/1;
+  margin-right: 2vw;
+}
+
+.navLink {
+  color: #626060;
+  text-decoration: none;
+  margin-right: 0.7rem;
+  font-weight: 600;
+}
+
+.activeNavLink {
+  color: var(--primary-color);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-color: var(--secondary-color);
+}

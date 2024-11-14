@@ -6,6 +6,8 @@ import Home from './pages/app/home/Home';
 import Navbar from './components/layout/navbar/Navbar';
 import Page404 from './pages/misc/Page404/Page404';
 import { ProductProvider } from './context/product.context';
+import { CartProvider } from './context/cart.context';
+import Cart from './pages/app/cart/Cart';
 
 function App() {
   const router = createBrowserRouter([
@@ -13,13 +15,21 @@ function App() {
       path: '/',
       element: <Navbar />,
       errorElement: <Page404 />,
-      children: [{ index: true, element: <Home /> }, { path: '/cart' }],
+      children: [
+        { index: true, element: <Home /> },
+        {
+          path: '/cart',
+          element: <Cart />,
+        },
+      ],
     },
   ]);
 
   return (
     <ProductProvider>
-      <RouterProvider router={router} />;
+      <CartProvider>
+        <RouterProvider router={router} />;
+      </CartProvider>
     </ProductProvider>
   );
 }

@@ -1,0 +1,4 @@
+.cartContainer {
+  border: 0.2rem solid var(--primary-color);
+  border-radius: 0.2rem;
+}

@@ -43,11 +43,11 @@
 .addToCartBtn {
   width: 100%;
   align-self: end;
-  border-color: #7f8cd9;
-  background-color: #7f8cd9;
+  border-color: var(--primary-color);
+  background-color: var(--primary-color);
 }
 
 .addToCartBtn:hover {
-  border-color: #5563b1;
-  background-color: #9ca8ec;
+  border-color: var(--primary-dark-color);
+  background-color: var(--primary-light-color);
 }

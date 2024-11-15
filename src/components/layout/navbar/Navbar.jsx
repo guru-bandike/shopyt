@@ -9,15 +9,15 @@ function Navbar() {
   const getLinkStyle = ({ isActive }) =>
     isActive ? `${style.activeNavLink} ${style.navLink}` : style.navLink;
 
-  console.log(getLinkStyle({ isActive: true }));
   return (
     <>
-      <BNavbar>
+      <div className={style.navbarBackground}></div>
+      <BNavbar className={style.navbar}>
         <Container>
           <BNavbar.Brand href="/" as={NavLink}>
             <img className={style.logo} src="/logo.svg" alt="logo" />
           </BNavbar.Brand>
-          <BNav className="me-auto">
+          <BNav className={style.navMenu}>
             <NavLink to="/" className={getLinkStyle}>
               Products
             </NavLink>

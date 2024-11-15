@@ -1,3 +1,70 @@
 .cartItem {
-  border-bottom: 0.2rem solid var(--primary-color);
+  display: flex;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.itemImage {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.itemDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 5px;
+}
+
+.itemDetails h4 {
+  font-size: 1rem;
+}
+
+.itemDetails p {
+  margin: 5px 0;
+  color: var(--black-color);
+}
+
+.price {
+  font-weight: bold;
+}
+
+.originalPrice {
+  text-decoration: line-through;
+  color: var(--light-grey-color);
+}
+
+.discount {
+  color: var(--secondary-color);
+}
+
+.quantityControls {
+  display: flex;
+  align-items: center;
+}
+
+.quantityControls button {
+  width: 25px;
+  height: 25px;
+  margin: 0 5px;
+  border-radius: 5px;
+  border: 1px solid var(--light-grey-color);
+  text-align: center;
+}
+
+.quantityControls .decreaseQuantity:active {
+  background-color: rgba(176, 10, 10, 0.587);
+}
+
+.quantityControls .increaseQuantity:active {
+  background-color: #388e3ca7;
+}
+
+.remove {
+  color: rgb(176, 10, 10);
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
 }

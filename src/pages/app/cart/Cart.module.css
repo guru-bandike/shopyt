@@ -1,4 +1,97 @@
+.emptyCartContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding-top: 5rem;
+}
+
+.emptyCartIcon {
+  width: 10rem;
+}
+
+.emptyCartContainer h1 {
+  font-weight: bolder;
+}
+
 .cartContainer {
-  border: 0.2rem solid var(--primary-color);
-  border-radius: 0.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem 3rem;
+  gap: 20px;
+  margin-top: 6rem;
+}
+
+.cartItems {
+  flex: 1;
+  min-width: 60%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: var(--white-color);
+}
+
+.priceDetails {
+  min-width: 30%;
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: var(--white-color);
+}
+
+.priceDetails h4,
+.priceDetails p,
+.priceDetails button {
+  margin: 10px 0;
+}
+
+.deliveryFee {
+  color: var(--light-grey-color);
+  text-decoration: line-through;
+}
+
+.freeDeliveryText {
+  color: var(--secondary-color);
+}
+
+.totalAmount {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.savings {
+  color: var(--secondary-color);
+}
+
+.placeOrder {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--white-color);
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.placeOrder:hover {
+  background-color: var(--secondary-color);
+}
+
+.priceDetails:hover .totalAmount {
+  color: var(--secondary-color);
+}
+
+@media (max-width: 827px) {
+  .cartContainer {
+    flex-direction: column;
+  }
+
+  .cartItems,
+  .priceDetails {
+    min-width: 100%;
+  }
 }

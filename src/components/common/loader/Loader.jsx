@@ -5,7 +5,7 @@ import style from './Loader.module.css';
 
 function Loader() {
   return (
-    <Container className={`d-flex justify-content-center mt-5 ${style.loader}`}>
+    <Container className={style.loader}>
       <h2>
         <Spinner animation="grow" /> Loading...
       </h2>

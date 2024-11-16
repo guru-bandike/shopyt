@@ -7,7 +7,7 @@ import style from './Home.module.css';
 
 function Home() {
   const { products, isLoading } = useProductValues();
-
+  console.log(isLoading);
   if (isLoading) return <Loader />;
 
   return (

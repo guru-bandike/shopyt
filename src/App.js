@@ -8,6 +8,9 @@ import Page404 from './pages/misc/Page404/Page404';
 import { ProductProvider } from './context/product.context';
 import { CartProvider } from './context/cart.context';
 import Cart from './pages/app/cart/Cart';
+import { AuthProvider } from './context/auth.context';
+import Auth from './pages/app/auth/Auth';
+import Logout from './pages/app/auth/Logout';
 
 function App() {
   const router = createBrowserRouter([
@@ -18,6 +21,13 @@ function App() {
       children: [
         { index: true, element: <Home /> },
         {
+          path: '/auth',
+          children: [
+            { index: true, element: <Auth /> },
+            { path: 'logout', element: <Logout /> },
+          ],
+        },
+        {
           path: '/cart',
           element: <Cart />,
         },
@@ -26,11 +36,13 @@ function App() {
   ]);
 
   return (
-    <ProductProvider>
-      <CartProvider>
-        <RouterProvider router={router} />;
-      </CartProvider>
-    </ProductProvider>
+    <AuthProvider>
+      <ProductProvider>
+        <CartProvider>
+          <RouterProvider router={router} />
+        </CartProvider>
+      </ProductProvider>
+    </AuthProvider>
   );
 }
 

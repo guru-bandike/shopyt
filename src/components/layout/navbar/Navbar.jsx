@@ -4,8 +4,11 @@ import Container from 'react-bootstrap/Container';
 import { NavLink, Outlet } from 'react-router-dom';
 
 import style from './Navbar.module.css';
+import { useAuth } from '../../../context/auth.context';
 
 function Navbar() {
+  const { isLoggedIn } = useAuth();
+
   const getLinkStyle = ({ isActive }) =>
     isActive ? `${style.activeNavLink} ${style.navLink}` : style.navLink;
 
@@ -24,10 +27,15 @@ function Navbar() {
             <NavLink to="/cart" className={getLinkStyle}>
               Cart
             </NavLink>
-
-            <NavLink to="/login" className={getLinkStyle}>
-              Login
-            </NavLink>
+            {isLoggedIn ? (
+              <NavLink to="/auth/logout" className={getLinkStyle}>
+                Logout
+              </NavLink>
+            ) : (
+              <NavLink to="/auth" className={getLinkStyle}>
+                Login/Signup
+              </NavLink>
+            )}
           </BNav>
         </Container>
       </BNavbar>

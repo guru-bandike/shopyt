@@ -41,7 +41,7 @@ function App() {
       <ProductProvider>
         <CartProvider>
           <RouterProvider router={router} />
-          <Toaster />
+          <Toaster position="bottom-right" />
         </CartProvider>
       </ProductProvider>
     </AuthProvider>

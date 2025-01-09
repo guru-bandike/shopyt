@@ -2,12 +2,17 @@ import BNav from 'react-bootstrap/Nav';
 import BNavbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import { NavLink, Outlet } from 'react-router-dom';
+import Badge from 'react-bootstrap/Badge';
 
 import style from './Navbar.module.css';
 import { useAuth } from '../../../context/auth.context';
+import { useCartValues } from '../../../context/cart.context';
 
 function Navbar() {
   const { isLoggedIn } = useAuth();
+  const { cartItems } = useCartValues();
+
+  const cartItemsCount = cartItems.reduce((acc, cartItem) => acc + cartItem.quantity, 0);
 
   const getLinkStyle = ({ isActive }) =>
     isActive ? `${style.activeNavLink} ${style.navLink}` : style.navLink;
@@ -26,6 +31,9 @@ function Navbar() {
             </NavLink>
             <NavLink to="/cart" className={getLinkStyle}>
               Cart
+              <Badge pill={true} className={style.cartBadge}>
+                {cartItemsCount}
+              </Badge>
             </NavLink>
             {isLoggedIn ? (
               <NavLink to="/auth/logout" className={getLinkStyle}>

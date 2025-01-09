@@ -11,6 +11,7 @@ import Cart from './pages/app/cart/Cart';
 import { AuthProvider } from './context/auth.context';
 import Auth from './pages/app/auth/Auth';
 import Logout from './pages/app/auth/Logout';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   const router = createBrowserRouter([
@@ -40,6 +41,7 @@ function App() {
       <ProductProvider>
         <CartProvider>
           <RouterProvider router={router} />
+          <Toaster />
         </CartProvider>
       </ProductProvider>
     </AuthProvider>
